@@ -1,15 +1,31 @@
+//import pizza.Pizza;
 
 public class PizzeriaFactory {
 	
-	private PizzeriaFactory uniqueInstance ;
+	private static PizzeriaFactory uniqueInstance = new PizzeriaFactory();
+	// protected Pizza pizza;
 	
-	public PizzeriaFactory getInstance() {
+	PizzeriaFactory() {
+	}
+	
+	public static PizzeriaFactory getInstance() {
 		return uniqueInstance;
 	}
 	
-	private PizzeriaFactory() {
-		
-	}
-	
+	public Pizzeria create(String name) {
+        Pizzeria pizzeria = null;
+        switch (name) {
+            case "Brest":
+                pizzeria = new PizzeriaBrest(PizzaFactoryBrest.getInstance());
+                break;
+            case "Strasbourg":
+                pizzeria = new PizzeriaStrasbourg(PizzaFactoryStrasbourg.getInstance());
+                break;
+            default:
+                System.out.println("no pizzeria style specified");
+                break;
+        }
+        return pizzeria;
+    }
 	
 }

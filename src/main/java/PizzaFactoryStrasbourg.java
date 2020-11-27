@@ -1,7 +1,14 @@
-import pizza.Pizza;
-import pizza.PizzaFactory;
-
 public class PizzaFactoryStrasbourg extends PizzaFactory{
+	
+	private static PizzaFactoryStrasbourg uniqueInstance ;
+	
+	private PizzaFactoryStrasbourg() {
+		
+	}
+	
+	public static PizzaFactoryStrasbourg getInstance() {
+		return uniqueInstance;
+	}
 	
 	public Pizza create(String name) {
 		Pizza pizza;

@@ -1,7 +1,14 @@
-import pizza.Pizza;
-import pizza.PizzaFactory;
-
 public class PizzaFactoryBrest extends PizzaFactory {
+	
+	private static PizzaFactoryBrest uniqueInstance ;
+	
+	private PizzaFactoryBrest() {
+		
+	}
+	
+	public static PizzaFactoryBrest getInstance() {
+		return uniqueInstance;
+	}
 	
 	public Pizza create(String name) {
 		Pizza pizza;

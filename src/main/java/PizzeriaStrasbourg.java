@@ -1,7 +1,9 @@
-
 public class PizzeriaStrasbourg extends Pizzeria{
-	public PizzeriaStrasbourg() {
+	
+		public PizzeriaStrasbourg(PizzaFactory pizzaFactory) {
+	        super(pizzaFactory);
+	    }
 		
-	}
+	
 
 }

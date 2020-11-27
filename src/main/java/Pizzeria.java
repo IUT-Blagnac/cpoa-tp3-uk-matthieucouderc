@@ -1,6 +1,3 @@
-import pizza.Pizza;
-import pizza.PizzaFactory;
-
 public abstract class Pizzeria {
 	protected Pizza createPizza (String type) {
 		Pizza pizza ;
@@ -11,18 +8,25 @@ public abstract class Pizzeria {
 			  } else {
 			  pizza = new PizzaPoivronStyleBrest();
 			  }
-			  
-		  
-		  pizza.prepare();
+			    
+		  return pizza;
+		  }
+	public Pizzeria (PizzaFactory pizzaFactory) {
+	
+	}
+	public Pizza orderPizza(String type) {
+		Pizza pizza;
+		pizza = createPizza(type);
+		
+		pizza.prepare();
 		  pizza.bake();
 		  pizza.cut();
 		  pizza.wrap();
 		  
 		  return pizza;
-		  }
-	public Pizzeria (PizzaFactory pizzaFactory) {
-		
+	
 	}
+	
 }
 
 
