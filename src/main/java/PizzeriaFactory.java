@@ -3,7 +3,7 @@
 public class PizzeriaFactory {
 	
 	private static PizzeriaFactory uniqueInstance = new PizzeriaFactory();
-	// protected Pizza pizza;
+	
 	
 	PizzeriaFactory() {
 	}

@@ -16,9 +16,11 @@ public abstract class Pizza {
 		System.out.println("Add the sauce...");
 		System.out.println("Add the garnitures: ");
 		
+        
 		for (int i = 0; i < garnitures.size(); i++) {
 			System.out.println(" " + garnitures.get(i));
 		}
+
 	}
 
 	public void bake() {

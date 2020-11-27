@@ -6,7 +6,7 @@ public abstract class Pizzeria {
 			  } else if (type.equals("poivron")) {
 			  pizza = new PizzaGrecqueStyleStrasbourg();
 			  } else {
-			  pizza = new PizzaPoivronStyleBrest();
+			  pizza = new PizzaCheeseStyleStrasbourg();
 			  }
 			    
 		  return pizza;
