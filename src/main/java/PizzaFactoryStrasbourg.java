@@ -13,9 +13,9 @@ public class PizzaFactoryStrasbourg extends PizzaFactory{
 	public Pizza create(String name) {
 		Pizza pizza;
 		
-		if (name == "Cheese") {
+		if (name == "Pizza Strasbourg style sauce and cheese") {
 			pizza = new PizzaCheeseStyleStrasbourg();
-		}else if (name == "Grecque") {
+		}else if (name == "Pizza with Brest style sauce and cheese") {
 			pizza = new PizzaGrecqueStyleStrasbourg();
 		}else {
 			pizza = new PizzaPoivronStyleStrasbourg();

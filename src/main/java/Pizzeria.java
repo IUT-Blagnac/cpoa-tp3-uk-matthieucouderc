@@ -1,14 +1,14 @@
 public abstract class Pizzeria {
-	protected Pizza createPizza (String type) {
-		Pizza pizza ;
-		 if (type.equals("fromage")) {
+	protected Pizza createPizza (String name) {
+		Pizza pizza;
+		  if (name.equals("Pizza with Brest style sauce and cheese")) {
 			  pizza = new PizzaCheeseStyleBrest();
-			  } else if (type.equals("poivron")) {
-			  pizza = new PizzaGrecqueStyleStrasbourg();
+			  } else if (name.equals("Pizza with Strasbourg style sauce and cheese")) {
+			  pizza = new PizzaCheeseStyleStrasbourg();
 			  } else {
 			  pizza = new PizzaCheeseStyleStrasbourg();
 			  }
-			    
+			   
 		  return pizza;
 		  }
 	public Pizzeria (PizzaFactory pizzaFactory) {

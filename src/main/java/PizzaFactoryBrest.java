@@ -13,7 +13,7 @@ public class PizzaFactoryBrest extends PizzaFactory {
 	public Pizza create(String name) {
 		Pizza pizza;
 		
-		if (name == "Cheese") {
+		if (name == "PizzaCheeseStyleBrest") {
 			pizza = new PizzaCheeseStyleBrest();
 		}else if (name == "Grecque") {
 			pizza = new PizzaGrecqueStyleBrest();
