@@ -1,8 +1,9 @@
+package main.java;
 public class PizzeriaStrasbourg extends Pizzeria{
 	
-		public PizzeriaStrasbourg(PizzaFactory pizzaFactory) {
-	        super(pizzaFactory);
-	    }
+	public PizzeriaStrasbourg() {
+        this.PizzaFactory = PizzaFactoryStrasbourg.getInstance();
+    }
 		
 	
 

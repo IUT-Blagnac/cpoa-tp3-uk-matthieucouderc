@@ -1,29 +1,23 @@
-//import pizza.Pizza;
+package main.java;
 
 public class PizzeriaFactory {
 	
-	private static PizzeriaFactory uniqueInstance = new PizzeriaFactory();
+	static PizzeriaFactory instance = new PizzeriaFactory();
 	
 	
-	PizzeriaFactory() {
+	private PizzeriaFactory() {
 	}
 	
 	public static PizzeriaFactory getInstance() {
-		return uniqueInstance;
+		return instance;
 	}
 	
-	public Pizzeria create(String name) {
+	public Pizzeria create(String type) {
         Pizzeria pizzeria = null;
-        switch (name) {
-            case "Brest":
-                pizzeria = new PizzeriaBrest(PizzaFactoryBrest.getInstance());
-                break;
-            case "Strasbourg":
-                pizzeria = new PizzeriaStrasbourg(PizzaFactoryStrasbourg.getInstance());
-                break;
-            default:
-                System.out.println("no pizzeria style specified");
-                break;
+        if (type.equals("Brest")) {
+                pizzeria = new PizzeriaBrest();
+        }else if (type.equals("Strasbourg")) {
+                pizzeria = new PizzeriaStrasbourg();
         }
         return pizzeria;
     }

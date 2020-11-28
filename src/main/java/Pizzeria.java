@@ -1,30 +1,18 @@
+package main.java;
 public abstract class Pizzeria {
-	protected Pizza createPizza (String name) {
-		Pizza pizza;
-		  if (name.equals("Pizza with Brest style sauce and cheese")) {
-			  pizza = new PizzaCheeseStyleBrest();
-			  } else if (name.equals("Pizza with Strasbourg style sauce and cheese")) {
-			  pizza = new PizzaCheeseStyleStrasbourg();
-			  } else {
-			  pizza = new PizzaCheeseStyleStrasbourg();
-			  }
-			   
-		  return pizza;
-		  }
-	public Pizzeria (PizzaFactory pizzaFactory) {
 	
-	}
-	public Pizza orderPizza(String type) {
-		Pizza pizza;
-		pizza = createPizza(type);
+	PizzaFactory PizzaFactory;
+	
+	
+	public Pizza orderPizza(String string) {
+		Pizza instance = PizzaFactory.create(string);
 		
-		pizza.prepare();
-		  pizza.bake();
-		  pizza.cut();
-		  pizza.wrap();
+		instance.prepare();
+		instance.bake();
+		instance.cut();
+		instance.wrap();
 		  
-		  return pizza;
-	
+		  return instance;
 	}
 	
 }

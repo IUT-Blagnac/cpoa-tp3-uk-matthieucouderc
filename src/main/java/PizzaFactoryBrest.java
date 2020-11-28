@@ -1,24 +1,25 @@
+package main.java;
 public class PizzaFactoryBrest extends PizzaFactory {
 	
-	private static PizzaFactoryBrest uniqueInstance ;
+	static PizzaFactoryBrest instance = new PizzaFactoryBrest();
 	
-	private PizzaFactoryBrest() {
-		
+	
+	private PizzaFactoryBrest() {	
 	}
 	
 	public static PizzaFactoryBrest getInstance() {
-		return uniqueInstance;
+		return instance;
 	}
 	
-	public Pizza create(String name) {
-		Pizza pizza;
+	public Pizza create(String type) {
+		Pizza pizza = null;
 		
-		if (name == "PizzaCheeseStyleBrest") {
+		if (type.equals("cheese")) {
 			pizza = new PizzaCheeseStyleBrest();
-		}else if (name == "Grecque") {
-			pizza = new PizzaGrecqueStyleBrest();
-		}else {
+		}else if (type.equals("poivron")) {
 			pizza = new PizzaPoivronStyleBrest();
+		}else {
+			pizza = new PizzaGrecqueStyleBrest();
 		}
 			
 		return pizza;

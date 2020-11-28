@@ -1,3 +1,5 @@
+package main.java;
+
 
 import java.util.ArrayList;
 
@@ -9,31 +11,37 @@ public abstract class Pizza {
 	protected String sauce;
 	protected ArrayList<String> garnitures;
 	
+	protected Pizza() {
+		this.name="";
+		this.crust="";
+		this.sauce="";
+		this.garnitures= new ArrayList<String>();
+			
+	}
 
-	public void prepare() {
-		System.out.println("Preparation of " + name);
+	protected void prepare() {
+		System.out.println("Preparation of " + this.name);
 		System.out.println("Spread the pizza dough...");
 		System.out.println("Add the sauce...");
 		System.out.println("Add the garnitures: ");
 		
         
 		for (int i = 0; i < garnitures.size(); i++) {
-			System.out.println(" " + garnitures.get(i));
+			System.out.println(" " + this.garnitures.get(i));
 		}
 
 	}
 
-	public void bake() {
+	protected void bake() {
 		System.out.println("Bake 25 minutes at 180°");
 		
 	}
 
-	public void cut() {
-		System.out.println("Cut the pizza in triangles");
+	protected void cut() {
 		
 	}
 
-	public void wrap() {
+	protected void wrap() {
 		System.out.println("Put the pizza in the official box");
 		
 	}
@@ -41,4 +49,10 @@ public abstract class Pizza {
 		return name;
 		
 	}
+	
+	public void setName(String pName) {
+		this.name = pName;
+		
+	}
+	
 }

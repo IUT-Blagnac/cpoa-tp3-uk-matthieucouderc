@@ -1,27 +1,27 @@
+package main.java;
 public class PizzaFactoryStrasbourg extends PizzaFactory{
 	
-	private static PizzaFactoryStrasbourg uniqueInstance ;
+	static PizzaFactoryStrasbourg instance = new PizzaFactoryStrasbourg();
 	
-	private PizzaFactoryStrasbourg() {
-		
+	
+	private PizzaFactoryStrasbourg() {	
 	}
 	
 	public static PizzaFactoryStrasbourg getInstance() {
-		return uniqueInstance;
+		return instance;
 	}
 	
-	public Pizza create(String name) {
-		Pizza pizza;
+	public Pizza create(String type) {
+		Pizza pizza = null;
 		
-		if (name == "Pizza Strasbourg style sauce and cheese") {
+		if (type.equals("cheese")) {
 			pizza = new PizzaCheeseStyleStrasbourg();
-		}else if (name == "Pizza with Brest style sauce and cheese") {
-			pizza = new PizzaGrecqueStyleStrasbourg();
-		}else {
+		}else if (type.equals("poivron")) {
 			pizza = new PizzaPoivronStyleStrasbourg();
+		}else {
+			pizza = new PizzaGrecqueStyleStrasbourg();
 		}
 			
 		return pizza;
 	}
-
 }

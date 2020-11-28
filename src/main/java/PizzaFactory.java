@@ -1,8 +1,6 @@
-
+package main.java;
 
 public abstract class PizzaFactory {
-	public Pizza create(String name) {
-		
-		return null;
-	}
+	protected abstract Pizza create(String type);
+	
 }
